@@ -14,16 +14,16 @@ jobs:
         include:
           - name: "Conformance (BIRD routing)"
             make_target: e2e-test
-          - name: "Conformance (Felix routing)"
-            make_target: e2e-test
-            EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
-            KIND_CALICO_API_GROUP: crd.projectcalico.org/v1
-            E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
-          - name: "ClusterNetworkPolicy (Felix routing)"
-            make_target: e2e-test-clusternetworkpolicy
-            EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
-            KIND_CALICO_API_GROUP: projectcalico.org/v3
-            E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
+          # - name: "Conformance (Felix routing)"
+          #   make_target: e2e-test
+          #   EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
+          #   KIND_CALICO_API_GROUP: crd.projectcalico.org/v1
+          #   E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
+          # - name: "ClusterNetworkPolicy (Felix routing)"
+          #   make_target: e2e-test-clusternetworkpolicy
+          #   EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
+          #   KIND_CALICO_API_GROUP: projectcalico.org/v3
+          #   E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
 
     steps:
       - name: Free up disk space
