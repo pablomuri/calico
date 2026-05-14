@@ -60,4 +60,5 @@ jobs:
           EXTRA_VALUES_FILES: ${{ matrix.EXTRA_VALUES_FILES }}
           KIND_CALICO_API_GROUP: ${{ matrix.KIND_CALICO_API_GROUP }}
           E2E_TEST_CONFIG: ${{ matrix.E2E_TEST_CONFIG }}
+          E2E_PROCS: "2"
         run: make ${{ matrix.make_target }} GIT_VERSION=v0.0.0-e2e-test
