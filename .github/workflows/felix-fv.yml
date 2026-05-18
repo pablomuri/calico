@@ -47,47 +47,47 @@ jobs:
             FV_NUM_BATCHES: "8"
             FV_BATCHES_TO_RUN: "8"
 
-          # nftables on Ubuntu 22.04 — 8 batches (disabled until iptables is validated)
-          # - name: "Felix FV: nftables (1/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "1"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (2/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "2"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (3/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "3"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (4/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "4"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (5/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "5"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (6/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "6"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (7/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "7"
-          #   FELIX_FV_NFTABLES: "Enabled"
-          # - name: "Felix FV: nftables (8/8)"
-          #   runner: ubuntu-22.04
-          #   FV_NUM_BATCHES: "8"
-          #   FV_BATCHES_TO_RUN: "8"
-          #   FELIX_FV_NFTABLES: "Enabled"
+          # nftables on Ubuntu 22.04 — 8 batches
+          - name: "Felix FV: nftables (1/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "1"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (2/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "2"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (3/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "3"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (4/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "4"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (5/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "5"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (6/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "6"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (7/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "7"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (8/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "8"
+            FELIX_FV_NFTABLES: "Enabled"
 
           # BPF on Ubuntu 24.04 — 16 batches (disabled until iptables is validated)
           # - name: "Felix FV: BPF (1/16)"
