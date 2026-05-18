@@ -232,6 +232,16 @@ jobs:
           docker system prune -af
           df -h
 
+      - name: Enable IPv6 for Docker
+        run: |
+          sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
+          {
+            "ipv6": true,
+            "fixed-cidr-v6": "2001:db8:1::/64"
+          }
+          EOF'
+          sudo systemctl restart docker
+
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
 
