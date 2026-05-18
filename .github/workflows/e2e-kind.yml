@@ -14,6 +14,7 @@ jobs:
         include:
           - name: "Conformance (BIRD routing)"
             make_target: e2e-test
+            E2E_TEST_CONFIG: e2e/config/kind.yaml
           - name: "Conformance (Felix routing)"
             make_target: e2e-test
             EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
@@ -59,5 +60,5 @@ jobs:
         env:
           EXTRA_VALUES_FILES: ${{ matrix.EXTRA_VALUES_FILES }}
           KIND_CALICO_API_GROUP: ${{ matrix.KIND_CALICO_API_GROUP }}
-          E2E_TEST_CONFIG: ${{ matrix.E2E_TEST_CONFIG || 'e2e/config/kind.yaml' }}
+          E2E_TEST_CONFIG: ${{ matrix.E2E_TEST_CONFIG }}
         run: make ${{ matrix.make_target }} GIT_VERSION=v0.0.0-e2e-test
