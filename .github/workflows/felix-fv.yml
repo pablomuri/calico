@@ -1,0 +1,254 @@
+name: Felix FV tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  felix-fv:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 180
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # iptables on Ubuntu 22.04 — 8 batches
+          - name: "Felix FV: iptables (1/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "1"
+          - name: "Felix FV: iptables (2/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "2"
+          - name: "Felix FV: iptables (3/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "3"
+          - name: "Felix FV: iptables (4/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "4"
+          - name: "Felix FV: iptables (5/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "5"
+          - name: "Felix FV: iptables (6/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "6"
+          - name: "Felix FV: iptables (7/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "7"
+          - name: "Felix FV: iptables (8/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "8"
+
+          # nftables on Ubuntu 22.04 — 8 batches
+          - name: "Felix FV: nftables (1/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "1"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (2/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "2"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (3/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "3"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (4/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "4"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (5/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "5"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (6/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "6"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (7/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "7"
+            FELIX_FV_NFTABLES: "Enabled"
+          - name: "Felix FV: nftables (8/8)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "8"
+            FV_BATCHES_TO_RUN: "8"
+            FELIX_FV_NFTABLES: "Enabled"
+
+          # BPF on Ubuntu 24.04 — 16 batches (BPF-SAFE tests only)
+          - name: "Felix FV: BPF (1/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "1"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (2/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "2"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (3/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "3"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (4/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "4"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (5/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "5"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (6/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "6"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (7/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "7"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (8/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "8"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (9/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "9"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (10/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "10"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (11/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "11"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (12/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "12"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (13/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "13"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (14/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "14"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (15/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "15"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (16/16)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "16"
+            FV_BATCHES_TO_RUN: "16"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+
+          # BPF conntrack tests on Ubuntu 22.04 — 4 batches
+          - name: "Felix FV: BPF CT (1/4)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "4"
+            FV_BATCHES_TO_RUN: "1"
+            FELIX_FV_ENABLE_BPF: "true"
+            FELIX_FV_NFTABLES: "Enabled"
+            FELIX_FV_BPFATTACHTYPE: "tc"
+            GINKGO_FOCUS: "_BPF_.*ct=true"
+          - name: "Felix FV: BPF CT (2/4)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "4"
+            FV_BATCHES_TO_RUN: "2"
+            FELIX_FV_ENABLE_BPF: "true"
+            FELIX_FV_NFTABLES: "Enabled"
+            FELIX_FV_BPFATTACHTYPE: "tc"
+            GINKGO_FOCUS: "_BPF_.*ct=true"
+          - name: "Felix FV: BPF CT (3/4)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "4"
+            FV_BATCHES_TO_RUN: "3"
+            FELIX_FV_ENABLE_BPF: "true"
+            FELIX_FV_NFTABLES: "Enabled"
+            FELIX_FV_BPFATTACHTYPE: "tc"
+            GINKGO_FOCUS: "_BPF_.*ct=true"
+          - name: "Felix FV: BPF CT (4/4)"
+            runner: ubuntu-22.04
+            FV_NUM_BATCHES: "4"
+            FV_BATCHES_TO_RUN: "4"
+            FELIX_FV_ENABLE_BPF: "true"
+            FELIX_FV_NFTABLES: "Enabled"
+            FELIX_FV_BPFATTACHTYPE: "tc"
+            GINKGO_FOCUS: "_BPF_.*ct=true"
+
+    steps:
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          docker system prune -af
+          df -h
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c  # v6.4.0
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Run Felix FV tests
+        env:
+          FELIX_FV_BPFATTACHTYPE: ${{ matrix.FELIX_FV_BPFATTACHTYPE }}
+        run: |
+          make -C felix fv \
+            FV_NUM_BATCHES=${{ matrix.FV_NUM_BATCHES }} \
+            FV_BATCHES_TO_RUN=${{ matrix.FV_BATCHES_TO_RUN }} \
+            FELIX_FV_NFTABLES="${{ matrix.FELIX_FV_NFTABLES }}" \
+            FELIX_FV_ENABLE_BPF="${{ matrix.FELIX_FV_ENABLE_BPF }}" \
+            GINKGO_FOCUS="${{ matrix.GINKGO_FOCUS }}" \
+            GIT_VERSION=v0.0.0-fv-test
