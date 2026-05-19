@@ -89,101 +89,293 @@ jobs:
             FV_BATCHES_TO_RUN: "8"
             FELIX_FV_NFTABLES: "Enabled"
 
-          # BPF on Ubuntu 24.04 — 16 batches
-          - name: "Felix FV: BPF (1/16)"
+          # BPF on Ubuntu 24.04 — 48 batches (2-vCPU runners need smaller batches than Semaphore's 4-vCPU)
+          - name: "Felix FV: BPF (1/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "1"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (2/16)"
+          - name: "Felix FV: BPF (2/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "2"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (3/16)"
+          - name: "Felix FV: BPF (3/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "3"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (4/16)"
+          - name: "Felix FV: BPF (4/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "4"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (5/16)"
+          - name: "Felix FV: BPF (5/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "5"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (6/16)"
+          - name: "Felix FV: BPF (6/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "6"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (7/16)"
+          - name: "Felix FV: BPF (7/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "7"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (8/16)"
+          - name: "Felix FV: BPF (8/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "8"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (9/16)"
+          - name: "Felix FV: BPF (9/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "9"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (10/16)"
+          - name: "Felix FV: BPF (10/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "10"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (11/16)"
+          - name: "Felix FV: BPF (11/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "11"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (12/16)"
+          - name: "Felix FV: BPF (12/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "12"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (13/16)"
+          - name: "Felix FV: BPF (13/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "13"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (14/16)"
+          - name: "Felix FV: BPF (14/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "14"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (15/16)"
+          - name: "Felix FV: BPF (15/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "15"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
-          - name: "Felix FV: BPF (16/16)"
+          - name: "Felix FV: BPF (16/48)"
             runner: ubuntu-24.04
-            FV_NUM_BATCHES: "16"
+            FV_NUM_BATCHES: "48"
             FV_BATCHES_TO_RUN: "16"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (17/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "17"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (18/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "18"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (19/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "19"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (20/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "20"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (21/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "21"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (22/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "22"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (23/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "23"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (24/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "24"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (25/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "25"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (26/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "26"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (27/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "27"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (28/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "28"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (29/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "29"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (30/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "30"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (31/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "31"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (32/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "32"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (33/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "33"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (34/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "34"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (35/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "35"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (36/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "36"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (37/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "37"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (38/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "38"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (39/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "39"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (40/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "40"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (41/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "41"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (42/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "42"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (43/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "43"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (44/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "44"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (45/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "45"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (46/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "46"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (47/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "47"
+            FELIX_FV_ENABLE_BPF: "true"
+            GINKGO_FOCUS: "BPF-SAFE"
+          - name: "Felix FV: BPF (48/48)"
+            runner: ubuntu-24.04
+            FV_NUM_BATCHES: "48"
+            FV_BATCHES_TO_RUN: "48"
             FELIX_FV_ENABLE_BPF: "true"
             GINKGO_FOCUS: "BPF-SAFE"
 
@@ -232,7 +424,7 @@ jobs:
           docker system prune -af
           df -h
 
-      - name: Enable IPv6 for Docker
+      - name: Enable IPv6 and SCTP for Docker
         run: |
           sudo bash -c 'cat > /etc/docker/daemon.json <<EOF
           {
@@ -241,6 +433,7 @@ jobs:
           }
           EOF'
           sudo systemctl restart docker
+          sudo modprobe sctp
 
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
