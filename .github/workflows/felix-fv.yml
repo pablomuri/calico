@@ -433,10 +433,11 @@ jobs:
           }
           EOF'
           sudo systemctl restart docker
-          sudo modprobe sctp
           sudo modprobe ipip
           sudo modprobe ip6_tunnel
           sudo modprobe vxlan
+          sudo modprobe sctp
+          sudo sysctl -w net.ipv4.conf.all.rp_filter=2
 
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
