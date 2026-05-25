@@ -1,0 +1,54 @@
+name: E2E tests (KinD)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e-kind:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Conformance (BIRD routing)"
+            make_target: e2e-test
+            E2E_TEST_CONFIG: e2e/config/kind.yaml
+          - name: "Conformance (Felix routing)"
+            make_target: e2e-test
+            EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
+            KIND_CALICO_API_GROUP: crd.projectcalico.org/v1
+            E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
+          - name: "ClusterNetworkPolicy (Felix routing)"
+            make_target: e2e-test-clusternetworkpolicy
+            EXTRA_VALUES_FILES: hack/test/kind/infra/values-felix-routing.yaml
+            KIND_CALICO_API_GROUP: projectcalico.org/v3
+            E2E_TEST_CONFIG: e2e/config/kind-felix-routing.yaml
+
+    steps:
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          docker system prune -af
+          df -h
+
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c  # v6.4.0
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Run E2E tests
+        env:
+          EXTRA_VALUES_FILES: ${{ matrix.EXTRA_VALUES_FILES }}
+          KIND_CALICO_API_GROUP: ${{ matrix.KIND_CALICO_API_GROUP }}
+          E2E_TEST_CONFIG: ${{ matrix.E2E_TEST_CONFIG }}
+        run: make ${{ matrix.make_target }} GIT_VERSION=v0.0.0-e2e-test
