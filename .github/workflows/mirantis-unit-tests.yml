@@ -1,0 +1,48 @@
+name: Unit tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unit-tests:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: "Felix UT"
+            component: felix
+          - name: "Typha UT"
+            component: typha
+          - name: "libcalico-go UT"
+            component: libcalico-go
+          - name: "API UT"
+            component: api
+          - name: "calicoctl UT"
+            component: calicoctl
+          - name: "kube-controllers UT"
+            component: kube-controllers
+          - name: "confd UT"
+            component: confd
+          - name: "goldmane UT"
+            component: goldmane
+          - name: "guardian UT"
+            component: guardian
+          - name: "whisker-backend UT"
+            component: whisker-backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Set up Go
+        uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c  # v6.4.0
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Run unit tests
+        run: make -C ${{ matrix.component }} ut
